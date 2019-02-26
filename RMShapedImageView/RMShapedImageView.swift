@@ -117,7 +117,7 @@ public class RMShapedImageView: UIImageView {
         CGContextDrawImage(context, CGRect(x: 0, y: 0, width: self.image!.size.width, height: self.image!.size.height), self.image!.CGImage)
         
         let dataType = UnsafePointer<UInt8>(data)
-        for var i = 0; i < pixelCount; i++ {
+        for i in 0 ..< pixelCount {
             let alphaChar = CGFloat(dataType[i])
             let alpha = alphaChar / 255.0;
             if alpha > self.shapedTransparentMaxAlpha {
